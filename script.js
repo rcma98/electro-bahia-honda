@@ -19,12 +19,25 @@ function actualizarCarrito() {
   total.textContent = suma;
 }
 
-document.getElementById('formComentario').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const nombre = this[0].value;
-  const texto = this[1].value;
-  const div = document.createElement('div');
-  div.innerHTML = `<strong>${nombre}</strong>: ${texto}`;
-  document.getElementById('listaComentarios').appendChild(div);
-  this.reset();
+document.addEventListener("DOMContentLoaded", function () {
+  const formulario = document.getElementById("formComentario");
+  const nombreInput = document.getElementById("nombreComentario");
+  const textoInput = document.getElementById("textoComentario");
+  const lista = document.getElementById("listaComentarios");
+
+  if (formulario && nombreInput && textoInput && lista) {
+    formulario.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nombre = nombreInput.value.trim();
+      const texto = textoInput.value.trim();
+      if (nombre && texto) {
+        const div = document.createElement("div");
+        div.innerHTML = `<strong>${nombre}</strong>: ${texto}`;
+        lista.appendChild(div);
+        formulario.reset();
+      }
+    });
+  } else {
+    console.warn("Formulario de comentarios no encontrado");
+  }
 });
