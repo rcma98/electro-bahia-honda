@@ -1,61 +1,64 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
-  background: #f4f4f4;
-  color: #333;
+  padding: 20px;
+  background-color: #f4f4f4;
 }
-header {
-  background: #003366;
-  color: white;
-  padding: 1rem;
+
+header, footer {
   text-align: center;
-}
-nav a {
-  margin: 0 1rem;
+  background-color: #333;
   color: white;
-  text-decoration: none;
+  padding: 10px 0;
 }
-section {
-  padding: 2rem;
-}
-.productos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.producto {
+
+main {
+  max-width: 800px;
+  margin: auto;
   background: white;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  width: 250px;
+  padding: 20px;
+  border-radius: 8px;
 }
+
 .producto img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  border-radius: 8px;
 }
-form input, form textarea {
-  display: block;
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-}
-form button {
-  background: #003366;
+
+button {
+  background-color: #0078d7;
   color: white;
-  padding: 0.7rem;
   border: none;
+  padding: 10px;
+  margin-top: 10px;
   cursor: pointer;
+  border-radius: 5px;
 }
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 2rem;
-  text-decoration: none;
+
+button:hover {
+  background-color: #005fa3;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 #listaComentarios div {
-  background: #fff;
-  margin-top: 1rem;
-  padding: 0.5rem;
-  border-left: 4px solid #003366;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #e9e9e9;
+  border-radius: 4px;
+}
+
+#listaCarrito li {
+  margin: 5px 0;
 }
