@@ -1,43 +1,34 @@
-let carrito = [];
+document.addEventListener("DOMContentLoaded", () => {
+  // 🛒 Carrito
+  const carrito = [];
+  const agregarBtn = document.getElementById("agregarCarrito");
+  const listaCarrito = document.getElementById("listaCarrito");
 
-function agregarAlCarrito(nombre, precio) {
-  carrito.push({ nombre, precio });
-  actualizarCarrito();
-}
+  if (agregarBtn && listaCarrito) {
+    agregarBtn.addEventListener("click", () => {
+      carrito.push("Refrigerador Premium");
+      const item = document.createElement("li");
+      item.textContent = "Refrigerador Premium";
+      listaCarrito.appendChild(item);
+    });
+  }
 
-function actualizarCarrito() {
-  const lista = document.getElementById('itemsCarrito');
-  const total = document.getElementById('total');
-  lista.innerHTML = '';
-  let suma = 0;
-  carrito.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = `${item.nombre} - €${item.precio}`;
-    lista.appendChild(li);
-    suma += item.precio;
-  });
-  total.textContent = suma;
-}
-
-document.addEventListener("DOMContentLoaded", function () {
+  // 💬 Comentarios
   const formulario = document.getElementById("formComentario");
-  const nombreInput = document.getElementById("nombreComentario");
-  const textoInput = document.getElementById("textoComentario");
-  const lista = document.getElementById("listaComentarios");
+  const listaComentarios = document.getElementById("listaComentarios");
 
-  if (formulario && nombreInput && textoInput && lista) {
-    formulario.addEventListener("submit", function (e) {
+  if (formulario && listaComentarios) {
+    formulario.addEventListener("submit", (e) => {
       e.preventDefault();
-      const nombre = nombreInput.value.trim();
-      const texto = textoInput.value.trim();
+      const nombre = document.getElementById("nombreComentario").value.trim();
+      const texto = document.getElementById("textoComentario").value.trim();
+
       if (nombre && texto) {
-        const div = document.createElement("div");
-        div.innerHTML = `<strong>${nombre}</strong>: ${texto}`;
-        lista.appendChild(div);
+        const comentario = document.createElement("div");
+        comentario.innerHTML = `<strong>${nombre}</strong>: ${texto}`;
+        listaComentarios.appendChild(comentario);
         formulario.reset();
       }
     });
-  } else {
-    console.warn("Formulario de comentarios no encontrado");
   }
 });
