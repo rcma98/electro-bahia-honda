@@ -3,66 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Electro Bahía Honda</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Tienda de Refrigeradores</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>Electro Bahía Honda</h1>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#contacto">Contacto</a>
-      <a href="#comentarios">Comentarios</a>
-    </nav>
+    <h1>Refrigerador Premium</h1>
   </header>
 
-  <section id="inicio">
-    <h2>Bienvenido</h2>
-    <p>Tu tienda de confianza en electrodomésticos en Arzúa.</p>
-  </section>
+  <main>
+    <section class="producto">
+      <img src="img/refrigerador.jpg" alt="Refrigerador" />
+      <p>Este refrigerador de última generación mantiene tus alimentos frescos y tu cocina elegante.</p>
+      <button id="agregarCarrito">Agregar al carrito</button>
+    </section>
 
-  <section id="catalogo">
-    <h2>Catálogo</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="img/refrigerador.jpg" alt="Refrigerador">
-        <h3>FríoMax 3000</h3>
-        <p>Refrigerador eficiente de 300L</p>
-        <span>€450</span>
-        <button onclick="agregarAlCarrito('FríoMax 3000', 450)">Agregar al carrito</button>
-      </div>
-      <!-- Puedes duplicar este bloque para más productos -->
-    </div>
-  </section>
+    <section class="carrito">
+      <h2>🛒 Carrito de compras</h2>
+      <ul id="listaCarrito"></ul>
+    </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form action="https://formspree.io/f/tu_codigo" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo" required />
-      <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+    <section class="comentarios">
+      <h2>💬 Comentarios</h2>
+      <form id="formComentario">
+        <input type="text" id="nombreComentario" placeholder="Tu nombre" required />
+        <textarea id="textoComentario" placeholder="Escribe tu comentario..." required></textarea>
+        <button type="submit">Publicar comentario</button>
+      </form>
+      <div id="listaComentarios"></div>
+    </section>
+  </main>
 
-  <section id="comentarios">
-    <h2>Comentarios</h2>
-    <form id="formComentario">
-      <input type="text" id="nombreComentario" placeholder="Tu nombre" required />
-      <textarea id="textoComentario" placeholder="Tu opinión" required></textarea>
-      <button type="submit">Publicar</button>
-    </form>
-    <div id="listaComentarios"></div>
-  </section>
-
-  <section id="carrito">
-    <h2>Tu carrito</h2>
-    <ul id="itemsCarrito"></ul>
-    <p>Total: €<span id="total">0</span></p>
-  </section>
-
-  <a href="https://wa.me/5359390067" class="whatsapp" target="_blank">💬</a>
+  <footer>
+    <p>&copy; 2025 Tienda Virtual de Ronald</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
