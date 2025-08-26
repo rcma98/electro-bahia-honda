@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (agregarBtn && listaCarrito) {
     agregarBtn.addEventListener("click", () => {
-      carrito.push("Refrigerador Premium");
+      carrito.push("Refrigerador SmartCool");
       const item = document.createElement("li");
-      item.textContent = "Refrigerador Premium";
+      item.textContent = "Refrigerador SmartCool";
       listaCarrito.appendChild(item);
     });
   }
