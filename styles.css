@@ -44,6 +44,7 @@ form button {
   color: white;
   padding: 0.7rem;
   border: none;
+  cursor: pointer;
 }
 .whatsapp {
   position: fixed;
@@ -51,4 +52,10 @@ form button {
   right: 20px;
   font-size: 2rem;
   text-decoration: none;
+}
+#listaComentarios div {
+  background: #fff;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-left: 4px solid #003366;
 }
